@@ -59,14 +59,19 @@ function Persons(name, age){
     this.name = name;
     this.age = age;
 
-    const printInfo = (num=1) => {
+    const printInfo = (num) => {
         console.log(`${this.name} is ${this.age} years old`);
-        return age = age + num
+        return age + num
     }
 }
-let person4 = new Persons('Jenn', 30)
 
-console.log(person4.printInfo)
+// const newPrintInfo = (num) => {
+//     console.log(`${this.name} is ${this.age} years old`);
+//     return age + num
+// }
+
+let person4 = new Persons('Jenn', 23)
+console.log(person4.printInfo(2))
 
 // Create another arrow function for the addAge method that takes a single parameter
 // Adding to the age 
@@ -79,3 +84,22 @@ console.log(person4.printInfo)
     If the length is greater than ten console log "Big word". 
     If the length of the string is less than 10 console log "Small Number"
 */
+
+const words =  (i) => {
+    return new Promise( (resolve, reject) => {
+        if(i.length < 10){
+            resolve(true)
+        } else {
+            reject(false)
+        }
+    })
+}
+
+words('steven')
+
+.then( (result) => {
+    console.log('Small Number')
+} )
+.catch( (error) => {
+    console.log('Big word')
+})
